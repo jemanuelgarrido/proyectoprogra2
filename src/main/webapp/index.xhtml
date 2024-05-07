@@ -7,12 +7,22 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
+<h:head>
+   <title>PortafolioPro</title>
+   <h:outputStylesheet library="CSS" name="styles.css"/>
+</h:head>
+
 <h:body>
 
-   <p:dataTable>
-      <p:column headerText="Nombre" />
-   </p:dataTable>
+   <div class="top-nav">
+      <a href="#">Contenido</a>
+      <a href="#">About</a>
+      <a href="Pages/PageComentary.xhtml">Comentarios</a>
+      <a href="#">Más sobre nosotros</a>
+   </div>
 
+   <h1 class="big-title">Bienvenidos al Portafolio</h1>
+
+   <p:link href="Pages/PageComentary.xhtml" value="Ir a PageComentary" />
 </h:body>
-
 </html>

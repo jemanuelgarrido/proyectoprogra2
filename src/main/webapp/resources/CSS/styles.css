@@ -1,0 +1,36 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3f;
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.big-title{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #d3d3d3;
+}
+.top-nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 1; /* Coloca la barra de navegacion por encima de otros elemtos */
+}
+.top-nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-right: 1px solid #555;
+    transition: background-color 0.3s;
+    font-family: "Courier New", Courier, monospace;
+
+}
+.top-nav a:last-child{
+    border-right: none;
+}
