@@ -14,19 +14,23 @@ html, body{
     margin-bottom: 5px;
     color: #d3d3d3;
 }
+.highlight {
+    color: red; /* Cambia esto por cualquier código de color que prefieras */
+}
+
 .top-nav{
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 20px;
-    z-index: 1; /* Coloca la barra de navegacion por encima de otros elemtos */
+
 }
 .top-nav a{
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-size: 16px;
-    border-right: 1px solid #555;
+    border-right: none;
     transition: background-color 0.3s;
     font-family: "Courier New", Courier, monospace;
 
