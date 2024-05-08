@@ -1,40 +1,58 @@
-html, body{
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #001f3f;
-    color: #FFFFFF;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #001f3f; /*Color del fondo*/
+    color: #FFFFFF; /*Color general del texto en la pagina*/
+    font-family: 'Courier New', Courier, monospace; /*Tipo de letra en la pagina*/
 }
 
-.big-title{
-    text-align: center;
-    font-size: 36px;
-    margin-top: 25px;
+.header { /*Clase de la imagen*/
+    position: relative;
+    height: 50vh; /* Altura de la cabecera de la imagen, y lo de abajo la coloca como fondo con el desvanecimiento*/
+    background: linear-gradient(to bottom, rgba(0,31,63,0) 0%, #001f3f 100%), url('#{request.contextPath}/resources/images/IMG_1.jpg') no-repeat center center;
+    background-size: cover; /*Nos asegura que la imagen cubra el espacio adecuado*/
+    z-index: 1; /*Aqui colocamos el control de apilamientos de objetos, en orden 1 va abajo de 2, 3 encima de 2, y asi*/
+}
+
+.big-title { /*Clase del titulo*/
+    position: relative;
+    text-align: left; /*Es la posicion donde estara el titulo*/
+    font-size: 45px;
+    margin-top: 300px; /* Ajustar este valor según sea necesario pero mejor no tocar, es lo que baja el titulo */
     margin-bottom: 5px;
     color: #d3d3d3;
-}
-.highlight {
-    color: red; /* Cambia esto por cualquier código de color que prefieras */
+    /* font-family: 'Arial', sans-serif; Cambia 'Arial' por la fuente que prefieras */
+    font-weight: bold; /* Añade negrita para un aspecto más destacado */
+    padding-left: 20px;
+    z-index: 2; /* Asegurar de que sea mayor que el z-index de .header para que se muestre encima de la imagen de UMG*/
 }
 
-.top-nav{
-    display: flex;
+.highlight { /*Clase de la palabra PRO del titulo para darle otro color que no se igual al demas titulo*/
+    color: red; /* Color de la palabra PRO del titulo */
+}
+
+.top-nav { /*Clase de la barra de enlaces que va en la parte superior de la pagina*/
+    position: relative;
+    display: flex; /*Nos facilita el diseño de elemenjtos internos*/
     justify-content: center;
     width: 100%;
-    margin-top: 20px;
-
+    margin-top: -50vh; /* Ajusta según la altura de la cabecera */
+    z-index: 2; /* Más alto que el z-index de .header */
+    background-color: rgba(0, 31, 63, 0.9); /* Color de fondo con opacidad de la barra de enlaces */
+    padding: 10px 0; /* Espaciado interno para los enlaces */
 }
-.top-nav a{
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
+
+.top-nav a {
+    color: white; /*Color de los textos*/
+    text-decoration: none; /*Con este eliminamos el subrayado de los enlaces*/
+    padding: 10px 25px;
     font-size: 16px;
     border-right: none;
-    transition: background-color 0.3s;
-    font-family: "Courier New", Courier, monospace;
-
+    transition: background-color 0.3s; /*Agrea una transicion suve al cambiar el colo de fondo de los enlaces*/
+    font-family: 'Arial', sans-serif; /*tipo de letra*/
 }
-.top-nav a:last-child{
+
+.top-nav a:last-child {
     border-right: none;
 }
