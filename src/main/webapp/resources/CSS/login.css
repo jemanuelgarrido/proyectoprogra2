@@ -1,0 +1,12 @@
+.login-panel{
+    width: 1000px; /*Esto es para el ancho del panel*/
+    margin: 0; /*Para centrar el panel */
+    text-align: center; /*Para centrar el contenido del panel*/
+}
+.login-button{
+    width: 150px; /*Esto es para el ancho del botón*/
+    margin-top: 10px; /*Espacio de arriba*/
+    margin-left: auto; /* Centrar el botón horizontalmente */
+    margin-right: auto; /* Centrar el botón horizontalmente */
+    display: block; /* Convertir el botón en un elemento de bloque para centrarlo horizontalmente */
+}
