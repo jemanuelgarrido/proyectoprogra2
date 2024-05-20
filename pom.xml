@@ -18,12 +18,15 @@
     </properties>
 
     <dependencies>
+        <!-- Dependencia para Jakarta EE API -->
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
             <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Dependencias para JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -36,7 +39,8 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+
+        <!-- Dependencia para PrimeFaces -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
@@ -44,6 +48,19 @@
             <classifier>jakarta</classifier>
         </dependency>
 
+        <!-- Dependencia para Hibernate -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.5.Final</version>
+        </dependency>
+
+        <!-- Dependencia para PostgreSQL JDBC -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.4</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -56,3 +73,5 @@
         </plugins>
     </build>
 </project>
+
+
