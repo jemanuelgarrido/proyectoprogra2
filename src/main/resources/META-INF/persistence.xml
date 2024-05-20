@@ -9,7 +9,7 @@
         <properties>
             <!-- Configuración para PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/commentary"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgreSQL12://localhost:5433/Commentary"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="virginia"/>
             <!-- Propiedades adicionales según sea necesario -->

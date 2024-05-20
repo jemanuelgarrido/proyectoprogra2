@@ -1,46 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-    <title>Formulario de Comentarios</title>
-    <h:outputStylesheet library="CSS" name="comentarios.css" />
+    <title>Comentarios</title>
 </h:head>
 <h:body>
-    <div class="headertwo"></div>
-    <div class="container">
-        <div class="header">
-            <h1>COMENTARIOS</h1>
-        </div>
-        <div class="form">
-            <h:form>
-                <div class="ui-fluid formgrid grid">
-                    <div class="field col-12 md-6">
-                        <p:outputLabel for="nombre" value="Nombre" />
-                        <p:inputText id="nombre" value="#{bean.nombre}" />
-                    </div>
-                    <div class="field col-12 md-6">
-                        <p:outputLabel for="apellido" value="Apellido" />
-                        <p:inputText id="apellido" value="#{bean.apellido}" />
-                    </div>
-                    <div class="field col-12 md-6">
-                        <p:outputLabel for="correo" value="Correo" />
-                        <p:inputText id="correo" value="#{bean.correo}" />
-                    </div>
-                    <div class="field col-12">
-                        <p:outputLabel for="comentario" value="Comentario" />
-                        <p:inputTextarea id="comentario" value="#{bean.comentario}" />
-                    </div>
-                    <div class="field col-12">
-                        <p:commandButton value="Enviar" action="#{bean.enviarComentario}" />
-                    </div>
-                </div>
-            </h:form>
-        </div>
-    </div>
+    <h:form>
+        <p:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="nombre" value="Nombre:" />
+            <p:inputText id="nombre" value="#{commentaryBean.commentary.nombre}" required="true" />
+
+            <h:outputLabel for="comentario" value="Comentario:" />
+            <p:inputTextarea id="comentario" value="#{commentaryBean.commentary.comentario}" required="true" rows="4" cols="50" />
+
+            <h:outputLabel for="fecha" value="Fecha:" />
+            <h:outputText id="fecha" value="#{commentaryBean.commentary.fecha}" />
+        </p:panelGrid>
+
+        <p:commandButton value="Enviar" action="#{commentaryBean.saveCommentary}" update="@form" />
+
+        <h:messages globalOnly="true" />
+
+        <p:dataTable value="#{commentaryBean.commentaries}" var="com" border="1">
+            <p:column headerText="Nombre">
+                #{com.nombre}
+            </p:column>
+            <p:column headerText="Comentario">
+                #{com.comentario}
+            </p:column>
+            <p:column headerText="Fecha">
+                #{com.fecha}
+            </p:column>
+        </p:dataTable>
+    </h:form>
 </h:body>
 </html>
