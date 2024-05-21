@@ -56,3 +56,28 @@ html, body {
 .top-nav a:last-child {
     border-right: none;
 }
+
+.team-section { /* Clase para la sección del equipo */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.team-member { /* Clase para cada miembro del equipo */
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img { /* Estilo para las imágenes de los miembros del equipo */
+    border-radius: 50%; /* Hace que las imágenes sean circulares */
+    width: 150px; /* Ancho de las imágenes */
+    height: 150px; /* Altura de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes se ajusten correctamente */
+}
+
+.team-member h2 { /* Estilo para el nombre de los miembros del equipo */
+    margin-top: 10px;
+    font-size: 18px;
+    color: #d3d3d3; /* Color del texto del nombre */
+}
