@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Comentarios</title>
 </h:head>
@@ -10,6 +11,11 @@
         <p:panelGrid columns="2" cellpadding="5">
             <h:outputLabel for="nombre" value="Nombre:" />
             <p:inputText id="nombre" value="#{commentaryBean.commentary.nombre}" required="true" />
+
+            <h:outputLabel for="email" value="Correo Electrónico:" />
+            <p:inputText id="email" value="#{commentaryBean.commentary.email}" required="true">
+                <f:validateRegex pattern="^[\\w.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$" />
+            </p:inputText>
 
             <h:outputLabel for="comentario" value="Comentario:" />
             <p:inputTextarea id="comentario" value="#{commentaryBean.commentary.comentario}" required="true" rows="4" cols="50" />
@@ -25,6 +31,9 @@
         <p:dataTable value="#{commentaryBean.commentaries}" var="com" border="1">
             <p:column headerText="Nombre">
                 #{com.nombre}
+            </p:column>
+            <p:column headerText="Correo Electrónico">
+                #{com.email}
             </p:column>
             <p:column headerText="Comentario">
                 #{com.comentario}

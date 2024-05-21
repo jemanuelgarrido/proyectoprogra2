@@ -1,43 +1,63 @@
-
 package com.example;
 
-        import jakarta.annotation.ManagedBean;
-        import jakarta.enterprise.context.RequestScoped;
-        import jakarta.inject.Named;
-        import jakarta.persistence.EntityManager;
-        import jakarta.persistence.EntityManagerFactory;
-        import jakarta.persistence.Persistence;
-        import jakarta.persistence.TypedQuery;
-        import java.util.List;
+import jakarta.ejb.Stateless;
+import jakarta.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+
+import java.util.List;
 
 @Named
-@ManagedBean
 @RequestScoped
 public class commentarybean {
+
+    @PersistenceContext
+    private EntityManager em;
+
     private commentary commentary = new commentary();
-    private List<commentary> commentaries;
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-    private EntityManager em = emf.createEntityManager();
+    public List<commentary> getCommentaries() {
+        TypedQuery<commentary> query = em.createQuery("SELECT c FROM commentary c ORDER BY c.fecha DESC", commentary.class);
+        return query.getResultList();
+    }
 
-    public commentary getCommentary() {
+    public EntityManager getEm() {
+        return em;
+    }
+
+    public void setEm(EntityManager em) {
+        this.em = em;
+    }
+
+    public com.example.commentary getCommentary() {
         return commentary;
     }
 
-    public void setCommentary(commentary commentary) {
+    public void setCommentary(com.example.commentary commentary) {
         this.commentary = commentary;
     }
 
-    public List<commentary> getCommentaries() {
-        TypedQuery<commentary> query = em.createQuery("SELECT c FROM commentary c", commentary.class);
-        commentaries = query.getResultList();
-        return commentaries;
+    public void saveCommentary() {
+        if (isCommentaryValid()) {
+            em.persist(commentary);
+            commentary = new commentary(); // Reset the commentary object after saving
+        }
     }
 
-    public void saveCommentary() {
-        em.getTransaction().begin();
-        em.persist(commentary);
-        em.getTransaction().commit();
-        commentary = new commentary(); // Reset the form
+    private boolean isCommentaryValid() {
+        if (commentary.getNombre() == null || commentary.getNombre().isEmpty()) {
+            return false;
+        }
+        if (commentary.getEmail() == null || commentary.getEmail().isEmpty()) {
+            return false;
+        }
+        if (commentary.getComentario() == null || commentary.getComentario().isEmpty()) {
+            return false;
+        }
+        return true;
     }
 }
+
+
