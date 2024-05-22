@@ -70,14 +70,63 @@ html, body {
 }
 
 .team-member img { /* Estilo para las imágenes de los miembros del equipo */
-    border-radius: 50%; /* Hace que las imágenes sean circulares */
-    width: 150px; /* Ancho de las imágenes */
-    height: 150px; /* Altura de las imágenes */
+    border-radius: 0%; /* Hace que las imágenes sean circulares */
+    width: 200px; /* Ancho de las imágenes */
+    height: 200px; /* Altura de las imágenes */
     object-fit: cover; /* Asegura que las imágenes se ajusten correctamente */
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover{/*Es el estilo para el estado over de las imagenes*/
+    transform: scale(1.1); /*Logra escalar la imagen al 110% de su tamaño original*/
 }
 
 .team-member h2 { /* Estilo para el nombre de los miembros del equipo */
     margin-top: 10px;
     font-size: 18px;
     color: #d3d3d3; /* Color del texto del nombre */
+}
+
+.separator {
+    width: 80%; /* 80% del ancho de la pantalla */
+    height: 2px; /* Altura de la línea */
+    background-color: #fff; /* Color blanco para la línea */
+    margin: 10px auto; /* Centrar horizontalmente y añadir margen inferior */
+}
+
+h3.big-title { /* Clase del subtítulo */
+    margin-top: 10px; /* Ajusta el espacio superior del título del objetivo */
+    text-align: center;
+    color: #d3d3d3;
+}
+
+.text-section {
+    margin: 40px auto;
+    width: 80%; /* O el ancho que se desee */
+    padding: 20px;
+    background-color: #f0f0f0; /* Cambia el color de fondo segun el diseño */
+    color: #333; /* Cambia el color de texto según el diseño */
+    border-radius: 8px; /* Esto es por si queremos border redondeados*/
+}
+
+.section-title {
+    font-size: 24px; /* Tamaño del título */
+    color: #002f6c; /* Color del título */
+    margin-bottom: 15px; /* Espacio entre el título y el texto */
+}
+
+.section-text {
+    font-size: 16px; /* Tamaño del texto */
+    line-height: 1.6; /* Espacio entre líneas*/
+    font-weight: bold; /*Aplica la letra negrita al texto*/
+}
+
+.footer {
+    background-color: #f0f0f0; /* Color de fondo del footer */
+    color: #666; /* Color del texto del footer */
+    text-align: center; /* Alineación del texto */
+    padding: 20px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    z-index: 100; /* Asegurar que esté por encima de otros elementos */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra para separar del contenido */
 }
