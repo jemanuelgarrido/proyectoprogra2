@@ -6,7 +6,6 @@
                  version="2.2">
         <persistence-unit name="default" transaction-type="JTA">
             <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
-            <class>implementation.Iusers</class>
             <properties>
                 <property name="hibernate.hbm2ddl.auto" value="update"/>
                 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
