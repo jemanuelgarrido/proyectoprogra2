@@ -6,45 +6,43 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-
 <h:head>
-   <title>PortafolioPro</title>
+   <title>PortafolioPRO</title>
    <h:outputStylesheet library="CSS" name="styles.css"/>
 </h:head>
-
 <h:body>
    <div class="header"></div>
    <div class="top-nav">
-      <a href="#">Contenido</a>
-      <a href="Pages/PageComentary.xhtml">Comentarios</a>
-      <a href="#">Más sobre nosotros</a>
-
+      <!--Direcciones web en la cabecera de la página en la que se encuentra-->
+      <a href="#{request.contextPath}/Pages/content.xhtml">Repositorios de trabajo</a>
+      <a href="#{request.contextPath}/Pages/PageComentary.xhtml">Comentarios</a>
+      <a href="#{request.contextPath}/Pages/About.xhtml">Más sobre nosotros</a>
+      <a href="#{request.contextPath}/Pages/api.xhtml">Integración del api</a>
    </div>
 
    <h1 class="big-title">Portafolio <span class="highlight">PRO</span></h1>
-   <div class ="separator"></div>
+   <div class="separator"></div>
    <div class="team-section">
       <div class="team-member">
-         <img src="#{request.contextPath}/resources/images/integrante1.jpg" alt="Integrante 1"/>
-         <h2>Integrante 1</h2>
+         <p:graphicImage library="images" name="integrante1.jpg" alt="Integrante 1"/>
+         <h2>Yampi</h2>
       </div>
       <div class="team-member">
-         <img src="#{request.contextPath}/resources/images/integrante1.jpg" alt="Integrante 2"/>
-         <h2>Integrante 2</h2>
+         <p:graphicImage library="images" name="int2.JPEG" alt="Integrante 2"/>
+         <h2>Juan Carlos Adolfo Alay Antonio</h2>
       </div>
       <div class="team-member">
-         <img src="#{request.contextPath}/resources/images/integrante1.jpg" alt="Integrante 3"/>
+         <p:graphicImage library="images" name="integrante1.jpg" alt="Integrante 3"/>
          <h2>Integrante 3</h2>
       </div>
       <div class="team-member">
-         <img src="#{request.contextPath}/resources/images/integrante1.jpg" alt="Integrante 4"/>
+         <p:graphicImage library="images" name="integrante1.jpg" alt="Integrante 4"/>
          <h2>Integrante 4</h2>
       </div>
-      <!-- Aqui se seguirian agragando mas -->
+      <!-- Aquí se seguirían agregando más -->
    </div>
-   <div class ="separator"></div>
+   <div class="separator"></div>
    <h3 class="big-title">Objetivo y Secciones del Portafolio <span class="highlight">PRO</span></h3>
-
 
    <div class="text-section">
       <h2 class="section-title">Objetivo <span class="highlight">Principal</span></h2>
@@ -78,7 +76,7 @@
    </div>
 
    <div class="text-section">
-      <h2 class="section-title">Sección <span class="highlight">Contenido</span></h2>
+      <h2 class="section-title">Sección <span class="highlight">Repositorios de Trabajo</span></h2>
       <p class="section-text">
          Una de las secciones principales es esta, ya que lo primordial del portafolio
          es ayudar a guiase al momento de codificar, en la seccion de Contenido
@@ -92,7 +90,7 @@
       <p>&copy; 2024 PortafolioPro. Todos los derechos reservados.</p>
       <p>Contacto: info@portfoliopro.com ejemplo de correojasjas</p>
       <p>Proyecto trabajado con PrimeFaces</p>
+      <p:commandButton value="Ver en BitBucket" onclick="window.open('https://bitbucket.org/programacionumgiii/proyectoprogra/src/master/', '_blank')" />
    </div>
 </h:body>
-
 </html>
