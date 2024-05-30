@@ -33,9 +33,13 @@
                         <h:outputLabel value="Type:" />
                         <h:outputText value="#{randomBean.random.type}" />
 
+                        <p:commandButton value="Encontrar el numero" actionListener="#{randomBean.fetchTrivia}" update=":randomForm"/>
+
                   </h:panelGrid>
 
             </p:panel>
+
+
       </h:form>
 </h:body>
 

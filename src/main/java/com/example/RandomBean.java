@@ -5,6 +5,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
+import lombok.Data;
 import org.asynchttpclient.*;
 
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Data
 @Named
 @ViewScoped
 public class RandomBean implements Serializable {
@@ -59,30 +61,5 @@ public class RandomBean implements Serializable {
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "Error closing client", e);
         }
-    }
-
-    // Getters and Setters
-    public Random getRandom() {
-        return random;
-    }
-
-    public void setRandom(Random random) {
-        this.random = random;
-    }
-
-    public int getMin() {
-        return min;
-    }
-
-    public void setMin(int min) {
-        this.min = min;
-    }
-
-    public int getMax() {
-        return max;
-    }
-
-    public void setMax(int max) {
-        this.max = max;
     }
 }
