@@ -3,11 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
-<<<<<<< HEAD
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/index.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
-=======
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Pages/PageComentary.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/Pages" />
->>>>>>> origin/master
       </map>
     </option>
   </component>

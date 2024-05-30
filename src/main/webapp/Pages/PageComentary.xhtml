@@ -62,9 +62,51 @@
             border: 1px solid black;
         }
     </style>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("WNPoyd6LawqiwDsuR"); // Replace with your EmailJS user ID
+        })();
+
+        function sendEmail(toName, toEmail, comment) {
+            var thankYouTemplateParams = {
+                to_name: toName,
+                to_email: toEmail,
+                comment: comment
+            };
+
+            var notificationTemplateParams = {
+                to_name: 'Equipo',
+                to_email: "survivorsportafoliopro@gmail.com",
+                comment: comment,
+                from_name: toName,
+                from_email: toEmail
+            };
+
+            // Enviar correo de agradecimiento al usuario
+            emailjs.send('service_wlmtkxe', 'template_n7vz7b8', thankYouTemplateParams)
+                .then(function(response) {
+                    console.log('Email de agradecimiento enviado exitosamente al usuario!', response.status, response.text);
+                }, function(error) {
+                    console.log('Error al enviar el email de agradecimiento al usuario...', error);
+                });
+
+            // Enviar correo de notificación a ti mismo
+            emailjs.send('service_wlmtkxe', 'template_a3qsdyf', notificationTemplateParams)
+                .then(function(response) {
+                    console.log('Email de notificación enviado exitosamente!', response.status, response.text);
+                }, function(error) {
+                    console.log('Error al enviar el email de notificación...', error);
+                });
+        }
+
+        function clearForm() {
+            document.getElementById('commentForm').reset();
+        }
+    </script>
 </h:head>
 <h:body>
-    <h:form>
+    <h:form id="commentForm">
         <p:panelGrid columns="2" cellpadding="5" styleClass="panel-grid">
             <h:outputLabel for="nombre" value="Nombre:" />
             <p:inputText id="nombre" value="#{commentaryBean.commentary.nombre}" required="true" />
@@ -81,7 +123,9 @@
             <h:outputText id="fecha" value="#{commentaryBean.commentary.fecha}" />
         </p:panelGrid>
 
-        <p:commandButton value="Enviar" action="#{commentaryBean.saveCommentary}" update="@form" styleClass="command-button" />
+        <p:commandButton value="Enviar" action="#{commentaryBean.saveCommentary}" update="@form"
+                         onsuccess="sendEmail('#{commentaryBean.commentary.nombre}', '#{commentaryBean.commentary.email}', '#{commentaryBean.commentary.comentario}'); clearForm();"
+                         styleClass="command-button" />
 
         <h:messages globalOnly="true" />
 
@@ -102,5 +146,3 @@
     </h:form>
 </h:body>
 </html>
-
-
