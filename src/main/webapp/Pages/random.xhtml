@@ -8,9 +8,22 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-      <title>Random Trivia</title>
+      <title>Sobre el equipo</title>
+      <h:outputStylesheet library="CSS" name="styles.css"/>
 </h:head>
 <h:body>
+      <div class="header"></div>
+      <div class="top-nav">
+            <!--Direcciones web en la cabecera de la página en la que se encuentra-->
+            <a href="#{request.contextPath}/Pages/content.xhtml">Repositorios de trabajo</a>
+            <a href="#{request.contextPath}/Pages/PageComentary.xhtml">Comentarios</a>
+            <a href="#{request.contextPath}/Pages/About.xhtml">Sobre nosotros</a>
+            <a href="#{request.contextPath}/index.xhtml">Inicio</a>
+
+      </div>
+      <div class="separator"/>
+      <h1 class="big-title">Api de un Número entre 2 dígitos</h1>
+      <div class="separator"/>
       <h:form id="randomForm">
             <p:panel header="Random Trivia" style="width: 400px;">
                   <h:panelGrid columns="2" cellpadding="5">
@@ -38,7 +51,6 @@
                   </h:panelGrid>
 
             </p:panel>
-
 
       </h:form>
 </h:body>
