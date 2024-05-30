@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+      <title>Random Trivia</title>
+</h:head>
+<h:body>
+      <h:form id="randomForm">
+            <p:panel header="Random Trivia" style="width: 400px;">
+                  <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputLabel value="Min:" />
+                        <p:inputText value="#{randomBean.min}" />
+
+                        <h:outputLabel value="Max:" />
+                        <p:inputText value="#{randomBean.max}" />
+
+                        <h:outputLabel value="Text:" />
+                        <h:outputText value="#{randomBean.random.text}" />
+
+                        <h:outputLabel value="Number:" />
+                        <p:inputText value="#{randomBean.random.number}" readonly="true" />
+
+                        <h:outputLabel value="Found:" />
+                        <h:outputText value="#{randomBean.random.found}" />
+
+                        <h:outputLabel value="Type:" />
+                        <h:outputText value="#{randomBean.random.type}" />
+
+                  </h:panelGrid>
+
+            </p:panel>
+      </h:form>
+</h:body>
+
+
+</html>
